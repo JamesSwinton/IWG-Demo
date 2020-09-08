@@ -1,0 +1,61 @@
+{
+  "api_password": "",
+  "iwg_url": "",
+  "columns": 1,
+  "tiles": [
+    {
+      "ui_config": {
+        "text": "Image Request",
+        "text_colour": "WHITE",
+        "text_size": 16,
+        "background_colour": "teal"
+      },
+      "iwg_config": {
+        "eid": [ 24 ],
+        "message": "This is a test message with Image",
+        "attachment_type": "IMAGE",
+        "file_path": "/sdcard/download/printer.jpg"
+      }
+    },
+    {
+      "ui_config": {
+        "text": "Audio Request",
+        "text_colour": "WHITE",
+        "text_size": 16,
+        "background_colour": "teal"
+      },
+      "iwg_config": {
+        "eid": [ 24 ],
+        "message": "This is a test message with Audio",
+        "attachment_type": "AUDIO",
+        "file_path": "/sdcard/download/test.mp3"
+      }
+    },
+    {
+      "ui_config": {
+        "text": "Video Request",
+        "text_colour": "WHITE",
+        "text_size": 16,
+        "background_colour": "teal"
+      },
+      "iwg_config": {
+        "eid": [ 24 ],
+        "message": "This is a test message with Video",
+        "attachment_type": "VIDEO",
+        "file_path": "/sdcard/download/test.mp4"
+      }
+    },
+    {
+      "ui_config": {
+        "text": "Message Request",
+        "text_colour": "WHITE",
+        "text_size": 16,
+        "background_colour": "teal"
+      },
+      "iwg_config": {
+        "eid": [ 24 ],
+        "message": "This is a test message with No Files"
+      }
+    }
+  ]
+}

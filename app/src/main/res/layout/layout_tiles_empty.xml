@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="Please ensure you have: \n\n Enabled All Permissions \n\n AND \n\n Defined atleast one valid Tile in the Config.json file (/sdcard/android/data/com.zebra.jamesswinton.wfctileinterfacepoc/files/config.json). Reinstalling the app will re-generate the default config file, if you have lost it."
+      android:textSize="14pt"
+      android:textStyle="bold" />
+
+  </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

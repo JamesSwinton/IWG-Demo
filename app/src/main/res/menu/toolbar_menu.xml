@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+    android:id="@+id/open_wfc"
+    android:icon="@drawable/ic_open_externally"
+    android:title="@string/menu_item_open_wfc"
+    app:showAsAction="always"/>
+
+</menu>

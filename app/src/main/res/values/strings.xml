@@ -1,0 +1,11 @@
+<resources>
+  <string name="app_name">WFCTileInterfacePOC</string>
+  <string name="menu_item_open_wfc">Open WFC</string>
+
+  <string name="sending_message_progress_dialog_text">
+    Sending Message: %1$s to %2$d
+  </string>
+  <string name="sending_attachment_progress_dialog_text">
+    Sending %1$s (%2$s) to EID %3$d | Message Content: %4$s
+  </string>
+</resources>

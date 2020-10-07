@@ -27,7 +27,7 @@ public interface AnnouncerApi {
 
   // Send Message (Inc with Image / Video / Audio )
   @Multipart
-  @POST("gw/announce/msg")
+  @POST("gw/announce/file")
   Call<AnnouncerResponse> sendMessageWithContent(
           @Query("api_password") String api_key,
           @Part("file") RequestBody file,

@@ -8,8 +8,8 @@ android {
         applicationId "com.zebra.jamesswinton.wfctileinterfacepoc"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 2
-        versionName "0.2-beta"
+        versionCode 3
+        versionName "1.0-stable"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

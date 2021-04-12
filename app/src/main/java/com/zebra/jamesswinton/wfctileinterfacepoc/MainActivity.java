@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.arthenica.mobileffmpeg.ExecuteCallback;
+import com.arthenica.mobileffmpeg.FFmpeg;
 import com.zebra.jamesswinton.wfctileinterfacepoc.adapters.TileAdapter;
 import com.zebra.jamesswinton.wfctileinterfacepoc.data.AnnouncerResponse;
 import com.zebra.jamesswinton.wfctileinterfacepoc.data.Config;
@@ -28,11 +30,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.arthenica.mobileffmpeg.Config.RETURN_CODE_CANCEL;
+import static com.arthenica.mobileffmpeg.Config.RETURN_CODE_SUCCESS;
 import static com.zebra.jamesswinton.wfctileinterfacepoc.utilities.CustomDialog.DialogType.ERROR;
 import static com.zebra.jamesswinton.wfctileinterfacepoc.utilities.CustomDialog.DialogType.SUCCESS;
 
@@ -117,24 +122,19 @@ public class MainActivity extends AppCompatActivity implements TileAdapter.OnTil
                     false);
             mProgressDialog.show();
 
-            switch (tile.getIwgConfig().getAttachmentType()) {
-                case "AUDIO":
-                    // Send Request
-                    mAnnouncerApi.sendMessageWithContent(apiKey,
-                            RequestBody.create(MediaType.parse("audio/*"), file),
-                            message, attachmentType, eid).enqueue(this);
-                case "VIDEO":
-                    // Send Request
-                    mAnnouncerApi.sendMessageWithContent(apiKey,
-                            RequestBody.create(MediaType.parse("video/*"), file),
-                            message, attachmentType, eid).enqueue(this);
-                case "IMAGE":
-                    // Send Request
-                    mAnnouncerApi.sendMessageWithContent(apiKey,
-                            RequestBody.create(MediaType.parse("image/*"), file),
-                            message, attachmentType, eid).enqueue(this);
-                    break;
-            }
+            // Build Body
+            RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+                    .addFormDataPart("message", message)
+                    .addFormDataPart("eid", String.valueOf(eid))
+                    .addFormDataPart("file", file.getName(),
+                            RequestBody.create(MediaType.parse("application/octet-stream"),
+                                    file)
+                    )
+                    .addFormDataPart("attachment",attachmentType.toLowerCase())
+                    .build();
+
+            // Send Request
+            mAnnouncerApi.sendMessageWithContent(apiKey, body).enqueue(this);
         }
     }
 

@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.zebra.jamesswinton.wfctileinterfacepoc"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.0-stable"
+        versionCode 4
+        versionName "1.1-stable"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,4 +48,7 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    // FMPEG
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.4'
 }

@@ -6,6 +6,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -26,14 +27,10 @@ public interface AnnouncerApi {
   );
 
   // Send Message (Inc with Image / Video / Audio )
-  @Multipart
-  @POST("gw/announce/file")
+  @POST("gw/announce/msg")
   Call<AnnouncerResponse> sendMessageWithContent(
           @Query("api_password") String api_key,
-          @Part("file") RequestBody file,
-          @Part("message") String message,
-          @Part("attachment") String attachment,
-          @Part("eid") int eid
+          @Body RequestBody body
   );
 
 
